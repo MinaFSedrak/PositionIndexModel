@@ -63,8 +63,15 @@ export default class Input extends Component {
     let { doc1, doc2, doc3, doc4, query } = this.state;
 
     let docs = [];
+    doc1 = doc1.replace(/[!"#$%&'()*+,-./:;<=>?@[^_`{|}~]/g, '');
+    doc2 = doc2.replace(/[!"#$%&'()*+,-./:;<=>?@[^_`{|}~]/g, '');
+    doc3 = doc3.replace(/[!"#$%&'()*+,-./:;<=>?@[^_`{|}~]/g, '');
+    doc4 = doc4.replace(/[!"#$%&'()*+,-./:;<=>?@[^_`{|}~]/g, '');
+    console.log('Doc1', doc1)
     docs.push(doc1, doc2, doc3, doc4);
+    query = query.replace(/[!"#$%&'()*+,-./:;<=>?@[^_`{|}~]/g, '');
     let tokens = query.split(" ");
+    console.log('Tokens', tokens)
     let resultString = "";
 
     for (let i = 0; i < 4; i++) {
